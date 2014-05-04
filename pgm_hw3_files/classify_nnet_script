@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sed -e "s/^nunits = .*/nunits = $1;/;" classify_nnet_template.m > classify_nnet.m
+
+/Applications/Octave.app/Contents/Resources/bin/octave -q classify_nnet.m
+# NOT TESTED IN MATLAB: May need minor modifications!
+# /Applications/MATLAB_R2010b.app/bin/matlab -nosplash -nojvm -nodesktop -r classify_nnet.m
+
+exit
+

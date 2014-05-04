@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sed -e "s/^kernel_type = .*/kernel_type = '$1';/;s/^maxT = .*/maxT = $2;/;s/^minT = .*/minT = $3;/;s/^rel_chg_thresh = .*/rel_chg_thresh = $4;/;s/^nclass = .*/nclass = $5;/;" learn_svm_template.m > learn_svm.m
+
+/Applications/Octave.app/Contents/Resources/bin/octave -q learn_svm.m
+# NOT TESTED IN MATLAB: May need minor modifications!
+# /Applications/MATLAB_R2010b.app/bin/matlab -nosplash -nojvm -nodesktop -r learn_svm.m
+
+exit
+
